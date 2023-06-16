@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "effective-octo-waffle"
+description = "An example project to show pyproject.toml"
+readme = "README.md"
+license = { file = "LICENSE.md" }
+authors = [
+  { name = "Colin Vallance", email = "colin.vallance@cdw.com" }
+]
+maintainers = [
+  { name = "Colin Vallance", email = "colin.vallance@cdw.com" }
+]
+requires-python = ">=3.9"
+dynamic = ["dependencies", "optional-dependencies", "version"]
+
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Private :: Do Not Upload"
+]
+
+[project.scripts]
+art-student = "color_theory.gui:main"
+
+[project.urls]
+Homepage = "https://github.com/crvatwork/effective-octo-waffle"
+Documentation = "https://github.com/crvatwork/effective-octo-waffle/README.md"
+"Bug Tracker" = "https://github.com/crvatwork/effective-octo-waffle/issues"
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+optional-dependencies.dev = { file = ["dev-requirements.txt"] }
+version = {attr = "color_theory.__version__"}
