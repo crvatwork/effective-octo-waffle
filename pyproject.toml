@@ -37,3 +37,13 @@ Documentation = "https://github.com/crvatwork/effective-octo-waffle/README.md"
 dependencies = { file = ["requirements.txt"] }
 optional-dependencies.dev = { file = ["dev-requirements.txt"] }
 version = {attr = "color_theory.__version__"}
+
+[tool.black]
+line-length = 90
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests"
+]
